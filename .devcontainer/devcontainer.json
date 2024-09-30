@@ -1,20 +1,20 @@
 {
     "name": "KSU Events Demo Dev",
-    "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye",
+    "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye", // python 3.12 debian image
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python",
-                "ms-python.pylint",
-                "ms-python.vscode-pylance"
+                "ms-python.python", // python
+                "ms-python.pylint", // python linter
+                "ms-python.vscode-pylance" // python rich language support and intellisense
             ],
             "settings": {
-                "editor.formatOnSave": true
+                "editor.formatOnSave": true // auto format on save to maintain consistent formatting
             }
         }
     },
-    "postCreateCommand": "pip install -r requirements.txt",
-    "forwardPorts": [
+    "postCreateCommand": "pip install -r requirements.txt", // pip install using requirements from requirements.txt
+    "forwardPorts": [ // forward these ports for use outside devcontainer
         8000
     ]
 }
