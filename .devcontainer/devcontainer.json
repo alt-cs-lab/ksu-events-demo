@@ -1,20 +1,24 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/postgres
 {
-    "name": "KSU Events Demo Dev",
-    "image": "mcr.microsoft.com/devcontainers/python:3.12-bullseye", // python 3.12 debian image
-    "customizations": {
-        "vscode": {
-            "extensions": [
-                "ms-python.python", // python
-                "ms-python.pylint", // python linter
-                "ms-python.vscode-pylance" // python rich language support and intellisense
-            ],
-            "settings": {
-                "editor.formatOnSave": true // auto format on save to maintain consistent formatting
-            }
-        }
-    },
-    "postCreateCommand": "pip install -r requirements.txt", // pip install using requirements from requirements.txt
-    "forwardPorts": [ // forward these ports for use outside devcontainer
-        8000
-    ]
+	"name": "Python 3 & PostgreSQL",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}"
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// This can be used to network with other containers or the host.
+	// "forwardPorts": [5000, 5432],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "pip install --user -r requirements.txt",
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
 }
