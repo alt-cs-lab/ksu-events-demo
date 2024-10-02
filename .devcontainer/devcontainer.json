@@ -1,20 +1,22 @@
 {
     "name": "KSU Events Demo Dev",
-    "dockerComposeFile": "docker-compose.yml",  // Reference to docker-compose file
-    "service": "dev",  // Name of the service defined in docker-compose.yml
-    "workspaceFolder": "/workspace",  // Syncs the local folder with the container workspace
+    "dockerComposeFile": "docker-compose.yml", // Reference to docker-compose file
+    "service": "dev", // Name of the service defined in docker-compose.yml
+    "workspaceFolder": "/workspace", // Syncs the local folder with the container workspace
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python",  // python extension
-                "ms-python.pylint",  // python linter
-                "ms-python.vscode-pylance"  // python rich language support and intellisense
+                "ms-python.python", // python extension
+                "ms-python.pylint", // python linter
+                "ms-python.vscode-pylance" // python rich language support and intellisense
             ],
             "settings": {
-                "editor.formatOnSave": true  // auto format on save to maintain consistent formatting
+                "editor.formatOnSave": true // auto format on save to maintain consistent formatting
             }
         }
     },
-    "postCreateCommand": "pip install -r requirements.txt",  // pip install using requirements from requirements.txt
-    "forwardPorts": [8000]  // Forward port 8000 to the host
+    "postCreateCommand": "pip install -r requirements.txt", // pip install using requirements from requirements.txt
+    "forwardPorts": [
+        8000
+    ] // Forward port 8000 to the host
 }
