@@ -9,4 +9,5 @@ setup for development within devcontainer
 
 ## Runing Dev WebApp 
 * In ‘ksu-events-demo' run the command `python manage.py migrate` 
-* Then run the command `python manage.py runserver` 
+* Then run the command `python manage.py runserver 0.0.0.0:8000` 
+* Open [localhost:8000](localhost:8000) in a web browser
