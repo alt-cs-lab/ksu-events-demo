@@ -1,24 +1,20 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/postgres
 {
-	"name": "Python 3 & PostgreSQL",
-	"dockerComposeFile": "docker-compose.yml",
-	"service": "app",
-	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// This can be used to network with other containers or the host.
-	"forwardPorts": [5000, 5432],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "pip install -r requirements.txt && pip install git+https://github.com/zombiepaladin/ksu-events.git"
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+    "name": "KSU Events Demo Dev",
+    "dockerComposeFile": "docker-compose.yml",  // Reference to docker-compose file
+    "service": "dev",  // Name of the service defined in docker-compose.yml
+    "workspaceFolder": "/workspace",  // Syncs the local folder with the container workspace
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",  // python extension
+                "ms-python.pylint",  // python linter
+                "ms-python.vscode-pylance"  // python rich language support and intellisense
+            ],
+            "settings": {
+                "editor.formatOnSave": true  // auto format on save to maintain consistent formatting
+            }
+        }
+    },
+    "postCreateCommand": "pip install -r requirements.txt",  // pip install using requirements from requirements.txt
+    "forwardPorts": [8000]  // Forward port 8000 to the host
 }
