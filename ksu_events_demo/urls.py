@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ksu_events.urls')),
+    path('accounts/', include('ksu_events.cas_urls')),
 ]

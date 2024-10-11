@@ -1,2 +1,2 @@
 django==5.1.1 # this demo project is using django 5.1.1 but the requirement for ksu_events is only django>=5
--e git+https://github.com/zombiepaladin/ksu-events@cas#egg=ksu_events # use the ksu_events package from github
+-e git+https://github.com/zombiepaladin/ksu-events#egg=ksu_events # use the ksu_events package from github
