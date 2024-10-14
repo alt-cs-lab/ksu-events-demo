@@ -48,7 +48,7 @@ AUTHENTICATION_BACKENDS = [
 
 CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
 CAS_LOGOUT_COMPLETELY = True
-CAS_REDIRECT_URL = '/'
+CAS_REDIRECT_URL = '/authed/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
