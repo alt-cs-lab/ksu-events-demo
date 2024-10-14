@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "ksu-events-demo"
+version = "0.1.0"
+description = ""
+authors = ["Whipple <94202163+g0ggle@users.noreply.github.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.1.2"
+ksu-events = {git = "https://github.com/zombiepaladin/ksu-events"}
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
