@@ -22,8 +22,8 @@ class CasLoginTestCase(TestCase):
 
     def test_cas_logout2(self):
         # Simulate the CAS login process
-        self.client.login(username='badUser', password='BadPass')
-        self.assertFalse(self.client.login(username='badUser', password='BadPass'), "Login should fail with incorrect credentials")
+        BadLogin = self.client.login(username='badUser', password='BadPass')
+        self.assertFalse(BadLogin, "Login should fail with incorrect credentials")
 
         response = self.client.get(self.logout_url) 
 
