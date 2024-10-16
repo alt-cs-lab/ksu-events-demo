@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ksu_events',
+    'ksu_events_demo',
     'django_cas_ng',
 ]
 
@@ -52,6 +53,7 @@ CAS_REDIRECT_URL = '/authed/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
+AUTH_USER_MODEL = 'ksu_events_demo.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
