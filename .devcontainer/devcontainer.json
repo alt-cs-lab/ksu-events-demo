@@ -19,7 +19,10 @@
 				"ms-python.vscode-pylance"
 			],
 			"settings": {
-				"editor.formatOnSave": true // auto format on save to maintain consistent formatting
+				"editor.formatOnSave": true, // auto format on save to maintain consistent formatting
+				"python.analysis.extraPaths": [
+					"./src/ksu-events"
+				]
 			}
 		}
 	}
