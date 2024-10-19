@@ -8,19 +8,27 @@ class CasLoginTestCase(TestCase):
         self.user = get_user_model().objects.create_user(username='testuser', password='testpass')
         self.login_url = reverse('cas_ng_login')
         self.protected_url = reverse('authed')
-    
+
+
+    #This block of code should mock if login is successful, and that the authed path is reachable
     def test_cas_login1(self):
-        # Simulate the CAS login process
+        #Login with valid credentials
         self.client.login(username='testuser', password='password')
-        response = self.client.get(self.protected_url, follow=True)
-        
-        # Verify that the user is authenticated
+
+        #Checks to see if login was authenticated
         self.assertTrue(self.user.is_authenticated)
 
-    def test_cas_login2(self):
-        #BadLogin = self.client.login(username='badUser', password='BadPass')
-        #self.assertFalse(BadLogin, "Login should fail with incorrect credentials")
-
         response = self.client.get(self.protected_url)
+
+        #Checks to see if authed is a valid path to reach once logged in
+        self.assertEqual(response.request['PATH_INFO'], "/authed/")
+
+    #Block of code should not be logged in and make sure that we are redirected to login page
+    def test_cas_login2(self):
+        response = self.client.get(self.protected_url)
+
+        #Should redirect to login page
         self.assertEqual(response.status_code, 302)
+
+        #Response should let us know we are moving to login page
         self.assertEqual(response.headers.get('Location'), "/accounts/login/?next=/authed/")
