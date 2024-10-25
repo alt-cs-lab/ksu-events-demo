@@ -207,7 +207,7 @@ django-cas-ng = "^5.0.1"
 [package.source]
 type = "git"
 url = "https://github.com/zombiepaladin/ksu-events"
-reference = "ksu-cas-extract"
+reference = "main"
 resolved_reference = "3ce4ad2108f4f12551bdc089a24a21ebf3443e66"
 
 [[package]]
@@ -469,4 +469,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "cf297cd88dca80a34d11ff3db4dd9cff5a85ac78d5ee41bf2c5bd8d3c0e179c7"
+content-hash = "af1ea5c0ca80784a963b089cbf2a7c45dede7f9046563d88fd06ad01a8118812"
