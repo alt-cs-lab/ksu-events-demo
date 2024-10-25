@@ -45,17 +45,7 @@ INSTALLED_APPS = [
     'django_cas_ng',
 ]
 
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-    'django_cas_ng.backends.CASBackend',
-]
-
-CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
 # CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
-CAS_LOGOUT_COMPLETELY = True
-CAS_REDIRECT_URL = '/authed/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/authed/'
-LOGIN_URL = '/accounts/login/'
-LOGOUT_URL = '/accounts/logout/'
 
 AUTH_USER_MODEL = 'ksu_events_demo.User'
 

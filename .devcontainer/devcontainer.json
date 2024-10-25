@@ -21,7 +21,7 @@
 			"settings": {
 				"editor.formatOnSave": true, // auto format on save to maintain consistent formatting
 				"python.analysis.extraPaths": [
-					"./src/ksu-events"
+					"/home/vscode/.pyenv/versions/3.10.15/lib/python3.10/site-packages",
 				]
 			}
 		}
