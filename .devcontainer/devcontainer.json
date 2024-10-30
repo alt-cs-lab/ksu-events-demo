@@ -1,5 +1,5 @@
 {
-	"name": "poetry3-poetry-pyenv",
+	"name": "ksu-events-demo_devcontainer",
 	"build": {
 		"dockerfile": "Dockerfile"
 	},
