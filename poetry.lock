@@ -192,23 +192,23 @@ files = [
 all = ["flake8 (>=7.1.1)", "mypy (>=1.11.2)", "pytest (>=8.3.2)", "ruff (>=0.6.2)"]
 
 [[package]]
-name = "ksu_events"
-version = "0.1"
-description = "KSU Events Django package with shared code for KSU Events Django Projects"
+name = "ksu-events"
+version = "0.1.0"
+description = ""
 optional = false
-python-versions = ">=3.10"
+python-versions = "^3.10"
 files = []
 develop = false
 
 [package.dependencies]
-django = ">=5"
-django-cas-ng = ">=5"
+django = "^5.1.2"
+django-cas-ng = "^5.0.1"
 
 [package.source]
 type = "git"
 url = "https://github.com/zombiepaladin/ksu-events"
-reference = "HEAD"
-resolved_reference = "de046472c9ae4b03e69cd11f9c723806d755f358"
+reference = "oauth"
+resolved_reference = "3ce4ad2108f4f12551bdc089a24a21ebf3443e66"
 
 [[package]]
 name = "lxml"
@@ -469,4 +469,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "68d25950f960923e006e775a0a3c859ed6ae4e76a804ef379577a5c8865455d1"
+content-hash = "b56a05899076643f96ffe686f4f4dfb6298c966153b18570e9b204dc8758672a"

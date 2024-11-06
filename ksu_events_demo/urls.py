@@ -16,11 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from ksu_events import views
+from ksu_events.base import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('ksu_events.urls')),
-    path('accounts/', include('ksu_events.cas_urls')),
+    path('accounts/', include('ksu_events.ksu_cas_auth.urls')),
     path('authed/', views.redirect, name='authed')
 ]
