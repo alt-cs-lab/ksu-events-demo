@@ -208,7 +208,7 @@ django-cas-ng = "^5.0.1"
 type = "git"
 url = "https://github.com/zombiepaladin/ksu-events"
 reference = "landpage"
-resolved_reference = "edbfadc1da91763622922031f0fa5d1f7b2a6b06"
+resolved_reference = "ce4bc2fa1d59f1d0e95d45b17a21e66d815787e8"
 
 [[package]]
 name = "lxml"
