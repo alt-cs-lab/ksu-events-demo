@@ -40,7 +40,17 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ksu_events',
     'ksu_events_demo',
+
+    # for cas auth
     'django_cas_ng',
+
+    # for oauth2
+    'ksu_events.oauth2',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.oauth2',
+
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -48,12 +58,26 @@ AUTHENTICATION_BACKENDS = [
     'django_cas_ng.backends.CASBackend',
 ]
 
+# FOR CAS
 CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
 # CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
 CAS_LOGOUT_COMPLETELY = True
 CAS_REDIRECT_URL = '/authed/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/authed/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
+
+# FOR OAUTH
+WEB_URL = 'https://my.mlh.io'
+API_URL = f'{WEB_URL}/api/v3'
+SOCIALACCOUNT_PROVIDERS = {
+    'mlh': {
+        'APP': {
+            'client_id': '<MLH_CLIENT_ID>',
+            'secret': '<MLH_SECRET>',
+            'key': ''
+        }
+    }
+}
 
 AUTH_USER_MODEL = 'ksu_events_demo.User'
 
@@ -65,6 +89,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',
 ]
 
 ROOT_URLCONF = 'ksu_events_demo.urls'

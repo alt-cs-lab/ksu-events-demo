@@ -20,6 +20,6 @@ from ksu_events.base import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('ksu_events.ksu_cas_auth.urls')),
+    path('accounts/', include('ksu_events.oauth2.urls')),
     path('authed/', views.redirect, name='authed')
 ]
