@@ -208,7 +208,7 @@ django-cas-ng = "^5.0.1"
 type = "git"
 url = "https://github.com/zombiepaladin/ksu-events"
 reference = "landpage"
-resolved_reference = "ce4bc2fa1d59f1d0e95d45b17a21e66d815787e8"
+resolved_reference = "f79920a98a11ecfa8f099fcf58ac01d28e1b1a39"
 
 [[package]]
 name = "lxml"
@@ -469,4 +469,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "88c5f58a71fa45093cf7feab437973793133415b023195105bdaf7aca034a2a9"
+content-hash = "6e62577a41ca2bcb71666d746156da20e1dabcbd288bfd0e7d49a8a8bd49ad9d"
