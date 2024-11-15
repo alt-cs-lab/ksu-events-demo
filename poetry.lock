@@ -230,7 +230,7 @@ django-cas-ng = "^5.0.1"
 type = "git"
 url = "https://github.com/zombiepaladin/ksu-events"
 reference = "oauth"
-resolved_reference = "04b91cc95212d7349e501aec181a47a98fafc6a4"
+resolved_reference = "bcb60917c11e6d1dcc3f4fb7dfe1191b31f658b4"
 
 [[package]]
 name = "lxml"

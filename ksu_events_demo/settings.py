@@ -55,14 +55,16 @@ INSTALLED_APPS = [
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'django_cas_ng.backends.CASBackend',
+    # 'django_cas_ng.backends.CASBackend', #cas
+    'allauth.account.auth_backends.AuthenticationBackend', #oauth
 ]
 
 # FOR CAS
-CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
+# CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
 # CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
-CAS_LOGOUT_COMPLETELY = True
-CAS_REDIRECT_URL = '/authed/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/authed/'
+# CAS_LOGOUT_COMPLETELY = True
+# CAS_REDIRECT_URL = '/authed/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/authed/'
+
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
@@ -70,14 +72,19 @@ LOGOUT_URL = '/accounts/logout/'
 WEB_URL = 'https://my.mlh.io'
 API_URL = f'{WEB_URL}/api/v3'
 SOCIALACCOUNT_PROVIDERS = {
-    'mlh': {
-        'APP': {
-            'client_id': '<MLH_CLIENT_ID>',
-            'secret': '<MLH_SECRET>',
-            'key': ''
-        }
+    'MLH': {
+        "SCOPE": ['email', 'phone_number', 'demographics', 'birthday', 'education'],
+        "AUTH_PARAMS": {
+            "access_type": "online",
+        },
+        "VERIFIED_EMAIL": True
     }
 }
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_ADAPTER = 'ksu_events.oauth2.adapter.AccountAdapter'
 
 AUTH_USER_MODEL = 'ksu_events_demo.User'
 
