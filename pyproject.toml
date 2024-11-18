@@ -10,6 +10,7 @@ python = "^3.10"
 django = "^5.1.2"
 ksu-events = {git = "https://github.com/zombiepaladin/ksu-events", branch = "main"}
 django-cas-ng = "^5.0.1"
+psycopg2 = "^2.9.10"
 
 
 [build-system]
