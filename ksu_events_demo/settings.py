@@ -16,6 +16,7 @@ from os import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+EVENTS_TEMPLATES_DIR = Path(BASE_DIR.parent, "ksu-events/ksu_events/base/templates")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -72,7 +73,9 @@ ROOT_URLCONF = 'ksu_events_demo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            #EVENTS_TEMPLATES_DIR
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

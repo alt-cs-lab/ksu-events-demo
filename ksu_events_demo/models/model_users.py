@@ -3,7 +3,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from datetime import datetime
 
-from ksu_events.ksu_events.models.mixins import TimeStampMixin
+from ksu_events.models.mixins import TimeStampMixin
 
 
 def validate_date_format(value):

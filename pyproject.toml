@@ -8,7 +8,8 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^5.1.2"
-ksu-events = {git = "https://github.com/zombiepaladin/ksu-events", branch="main"}
+ksu-events = {git = "https://github.com/zombiepaladin/ksu-events", branch = "main"}
+django-cas-ng = "^5.0.1"
 
 
 [build-system]
