@@ -178,6 +178,25 @@ Django = ">=2.2"
 python-cas = ">=1.6.0"
 
 [[package]]
+name = "django-ksu-cas-auth"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = "^3.10"
+files = []
+develop = false
+
+[package.dependencies]
+django = "^5.1.2"
+django-cas-ng = "^5.0.1"
+
+[package.source]
+type = "git"
+url = "https://github.com/alt-cs-lab/django-ksu-cas-auth"
+reference = "main"
+resolved_reference = "05ba61d8ee309f91f3a9a653f9e051a2a4398f29"
+
+[[package]]
 name = "idna"
 version = "3.10"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -202,13 +221,12 @@ develop = false
 
 [package.dependencies]
 django = "^5.1.2"
-django-cas-ng = "^5.0.1"
 
 [package.source]
 type = "git"
-url = "https://github.com/zombiepaladin/ksu-events"
+url = "https://github.com/alt-cs-lab/ksu-events"
 reference = "main"
-resolved_reference = "32c6436d103a67302b633ddfefae2cd455be9933"
+resolved_reference = "e9b24f537d81e7b64a747dc3c2c5ff8b38b4a527"
 
 [[package]]
 name = "lxml"
@@ -487,4 +505,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "5535b24c3a50ba88c2f92366a783eb98b3b1918758bc1a79a0645bee53bc9fda"
+content-hash = "022f5ff14a46d9338c2ed9cea39ed83b3d16580d304bc2f2b963c04f6de2d532"

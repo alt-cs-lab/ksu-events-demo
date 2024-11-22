@@ -20,7 +20,7 @@ from ksu_events import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('ksu_events.urls'))
-    # path('accounts/', include('ksu_cas_auth.urls')),
+    path('', include('ksu_events.urls')),
+    path('accounts/', include('django_ksu_cas_auth.urls')),
     # path('authed/', views.redirect, name='authed')
 ]

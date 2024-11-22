@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ksu_events',
+    'django_ksu_cas_auth',
     'ksu_events_demo',
     'django_cas_ng',
 ]
