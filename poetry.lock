@@ -225,8 +225,8 @@ django = "^5.1.2"
 [package.source]
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
-reference = "main"
-resolved_reference = "e9b24f537d81e7b64a747dc3c2c5ff8b38b4a527"
+reference = "alexbranch"
+resolved_reference = "5412dafc5c1f7c7f62cffc9457ca7dc076995f12"
 
 [[package]]
 name = "lxml"
@@ -505,4 +505,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "022f5ff14a46d9338c2ed9cea39ed83b3d16580d304bc2f2b963c04f6de2d532"
+content-hash = "39d0b505e7417c3a998d5dde7a0f74730428cb6a97afcc8654d56e94d6ea4498"

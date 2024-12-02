@@ -98,11 +98,11 @@ WSGI_APPLICATION = 'ksu_events_demo.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "postgres",
-        "USER": "postgres",
-        "PASSWORD": "postgres",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
+        "NAME": "postgres" if environ.get('DB_NAME') is None else environ.get('DB_NAME'),
+        "USER": "postgres" if environ.get('DB_USER') is None else environ.get('DB_USER'),
+        "PASSWORD": "postgres" if environ.get('DB_PASSWORD') is None else environ.get('DB_PASSWORD'),
+        "HOST": "127.0.0.1" if environ.get('DB_HOST') is None else environ.get('DB_HOST'),
+        "PORT": "5432" if environ.get('DB_PORT') is None else environ.get('DB_PORT'),
     }
 }
 

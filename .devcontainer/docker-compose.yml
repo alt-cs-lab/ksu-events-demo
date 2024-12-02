@@ -5,6 +5,12 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
+    
+    environment:
+      DB_USER: postgres
+      DB_NAME: postgres-1
+      DB_PASSWORD: postgres
+      DB_HOST: ksu-events-postgres
 
     volumes:
       - ../..:/workspaces:cached
@@ -20,12 +26,13 @@ services:
 
   db:
     image: postgres:latest
+    hostname: ksu-events-postgres
     restart: unless-stopped
     volumes:
       - postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_DB: postgres
+      POSTGRES_DB: postgres-1
       POSTGRES_PASSWORD: postgres
 
     # Add "forwardPorts": ["5432"] to **devcontainer.json** to forward PostgreSQL locally.
