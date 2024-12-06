@@ -52,8 +52,8 @@ AUTHENTICATION_BACKENDS = [
 
 CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
 # CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
-CAS_LOGOUT_COMPLETELY = True
-CAS_REDIRECT_URL = '/authed/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/authed/'
+CAS_LOGOUT_COMPLETELY = False
+CAS_REDIRECT_URL = '/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
