@@ -225,7 +225,7 @@ django = "^5.1.2"
 [package.source]
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
-reference = "a.5.0"
+reference = "main"
 resolved_reference = "b8661ce445f954bd6097497239277f3826c1fd13"
 
 [[package]]
@@ -505,4 +505,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "28ab6a31111bbb2e01a1c16d3ca2042a609863ef46a30963bd49176dde20b0d2"
+content-hash = "022f5ff14a46d9338c2ed9cea39ed83b3d16580d304bc2f2b963c04f6de2d532"
