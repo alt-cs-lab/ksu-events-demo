@@ -1,1 +1,0 @@
-from ksu_events_demo.models.model_users import User
