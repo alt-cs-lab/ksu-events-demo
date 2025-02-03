@@ -14,3 +14,4 @@ ENV PYTHONUNBUFFERED 1
 
 
 RUN python -m pip install Django
+RUN apt-get update && apt-get install -y postgresql-client

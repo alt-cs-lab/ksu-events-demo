@@ -57,7 +57,7 @@ CAS_REDIRECT_URL = '/' if environ.get('CODESPACES') is None else 'https://' + en
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
-AUTH_USER_MODEL = 'ksu_events_demo.User'
+AUTH_USER_MODEL = 'ksu_events.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
