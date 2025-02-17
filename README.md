@@ -6,14 +6,16 @@ This is a demo event that reads in the events package.
 * OR open repo in GitHub code spaces 
 
 ## Runing Dev WebApp
-* In 'ksu-events-demo' run the command `poetry run python manage.py migrate` 
-* Then run the command `poetry run python manage.py runserver 0.0.0.0:8000` 
-* Open [localhost:8000](localhost:8000) in a web browser
+* migrate the db `poetry run python manage.py migrate` 
+* start the server `poetry run python manage.py runserver`
+* optionally specify port `poetry run python manage.py runserver 0.0.0.0:8000`
+* open the provided URL in a web browser `Starting development server at http://0.0.0.0:8000/`
 
 ## Common Commands
-* update dependencies (in pyproject.toml) to latest version `poetry update`
+* update dependencies and lock file (pyproject.toml and poetry.lock) to latest version `poetry update`
 * make migrations `poetry run python manage.py makemigrations`
 * manage db `poetry run python manage.py dbshell`
+* creating admin account `poetry run python manage.py createsuperuser`
 
 ## Reset DB when migrations fail
 * manage db `poetry run python manage.py dbshell`
@@ -22,3 +24,8 @@ This is a demo event that reads in the events package.
 * leave psql `\q`
 * optionally create migrations `poetry run python manage.py makemigrations`
 * migrate db `poetry run python manage.py migrate` 
+
+## login to django admin panel
+* creating admin account `poetry run python manage.py createsuperuser`
+* run server `poetry run python manage.py runserver`
+* go to admin panel `/admin`
