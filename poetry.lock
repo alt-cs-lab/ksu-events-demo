@@ -221,7 +221,7 @@ django = "^5.1.2"
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
 reference = "main"
-resolved_reference = "f2b4f470b7977e0cc2954a73127e807a6c880900"
+resolved_reference = "bd47d763de33e38c4775e064e4243cf2117f6443"
 
 [[package]]
 name = "lxml"
