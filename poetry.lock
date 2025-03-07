@@ -762,8 +762,8 @@ whitenoise = "^6.7.0"
 [package.source]
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
-reference = "jake-sprint-8"
-resolved_reference = "1df10a9f83843733387d3be454b889b56a1921c7"
+reference = "main"
+resolved_reference = "c4248ce46f2f75688e97a28e4134d91e7ce2f98e"
 
 [[package]]
 name = "lxml"
@@ -1505,4 +1505,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "5cead45ba17e4dade2ba75c4734d74b0777601a5c8558d59089ae2c29ea82cf6"
+content-hash = "f57e9b2a53b0019638dfcb27fab69bbb8b0363430636ed492255fc22a524150f"
