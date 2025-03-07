@@ -51,10 +51,15 @@ AUTHENTICATION_BACKENDS = [
     'django_cas_ng.backends.CASBackend',
 ]
 
+
+
 CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
 # CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
 CAS_LOGOUT_COMPLETELY = False
-CAS_REDIRECT_URL = '/' if environ.get('CODESPACES') is None else 'https://' + environ.get('CODESPACE_NAME') + '-8000.' + environ.get('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN') + '/'
+if environ.get('CODESPACES') is None:
+    CAS_REDIRECT_URL = '/'
+else:
+    CAS_REDIRECT_URL = 'https://' + environ.get('CODESPACE_NAME') + '-8000.app.github.dev' + '/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
 
