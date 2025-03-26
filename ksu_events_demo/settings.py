@@ -51,20 +51,6 @@ AUTHENTICATION_BACKENDS = [
     'django_cas_ng.backends.CASBackend',
 ]
 
-
-
-CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
-# CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
-CAS_LOGOUT_COMPLETELY = False
-if environ.get('CODESPACES') is None:
-    CAS_REDIRECT_URL = '/'
-else:
-    CAS_REDIRECT_URL = 'https://' + environ.get('CODESPACE_NAME') + '-8000.app.github.dev' + '/'
-LOGIN_URL = '/accounts/login/'
-LOGOUT_URL = '/accounts/logout/'
-
-AUTH_USER_MODEL = 'ksu_events.User'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -74,6 +60,24 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# implementation configuration
+CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/' 
+useTestCas = False
+
+## cas logic
+if useTestCas:
+    CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
+    MIDDLEWARE.insert(0, 'ksu_events_demo.middleware.FixTestCASRedirectMiddleware')
+CAS_LOGOUT_COMPLETELY = False
+if environ.get('CODESPACES') is None:
+    CAS_REDIRECT_URL = '/'
+else:
+    CAS_REDIRECT_URL = 'https://' + environ.get('CODESPACE_NAME') + '-8000.app.github.dev' + '/'
+
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+AUTH_USER_MODEL = 'ksu_events.User'
 
 ROOT_URLCONF = 'ksu_events_demo.urls'
 
