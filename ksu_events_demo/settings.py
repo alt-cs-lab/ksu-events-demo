@@ -16,7 +16,8 @@ from os import environ
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-EVENTS_TEMPLATES_DIR = Path(BASE_DIR.parent, "ksu-events/ksu_events/base/templates")
+EVENTS_TEMPLATES_DIR = Path(
+    BASE_DIR.parent, "ksu-events/ksu_events/base/templates")
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
@@ -51,20 +52,6 @@ AUTHENTICATION_BACKENDS = [
     'django_cas_ng.backends.CASBackend',
 ]
 
-
-
-CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
-# CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
-CAS_LOGOUT_COMPLETELY = False
-if environ.get('CODESPACES') is None:
-    CAS_REDIRECT_URL = '/'
-else:
-    CAS_REDIRECT_URL = 'https://' + environ.get('CODESPACE_NAME') + '-8000.app.github.dev' + '/'
-LOGIN_URL = '/accounts/login/'
-LOGOUT_URL = '/accounts/logout/'
-
-AUTH_USER_MODEL = 'ksu_events.User'
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -75,14 +62,42 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# implementation configuration
+CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
+useTestCas = False  # set true to use testcas.cs.ksu.edu
+
+# cas logic
+
+if environ.get('CODESPACES') is None:
+    CAS_REDIRECT_URL = '/'
+else:
+    useTestCas = True  # set false to use other cas with codespaces
+    CODESPACE_NAME = environ['CODESPACE_NAME']
+    CAS_REDIRECT_URL = f'https://{CODESPACE_NAME}-8000.app.github.dev/'
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    USE_X_FORWARDED_HOST = True
+    USE_X_FORWARDED_PORT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    ALLOWED_HOSTS = [f'{CODESPACE_NAME}-8000.app.github.dev']
+if useTestCas:
+    CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
+    MIDDLEWARE.insert(
+        0, 'ksu_events_demo.middleware.FixTestCASRedirectMiddleware')
+
+CAS_LOGOUT_COMPLETELY = False
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout/'
+AUTH_USER_MODEL = 'ksu_events.User'
+
 ROOT_URLCONF = 'ksu_events_demo.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            #EVENTS_TEMPLATES_DIR
-            ],
+            # EVENTS_TEMPLATES_DIR
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
