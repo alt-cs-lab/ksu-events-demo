@@ -79,7 +79,10 @@ else:
     USE_X_FORWARDED_PORT = True
     SESSION_COOKIE_SECURE = True
     CSRF_COOKIE_SECURE = True
-    ALLOWED_HOSTS = [f'{CODESPACE_NAME}-8000.app.github.dev']
+    ALLOWED_HOSTS = [
+        f'{CODESPACE_NAME}-8000.app.github.dev', 'https://localhost:8000']
+    CSRF_TRUSTED_ORIGINS = [
+        f'https://{CODESPACE_NAME}-8000.app.github.dev', 'https://localhost:8000']
 if useTestCas:
     CAS_SERVER_URL = 'https://testcas.cs.ksu.edu'
     MIDDLEWARE.insert(
