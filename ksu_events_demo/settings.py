@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django_ksu_cas_auth',
     'ksu_events_demo',
     'django_cas_ng',
+    'django_bootstrap5'
 ]
 
 AUTHENTICATION_BACKENDS = [
