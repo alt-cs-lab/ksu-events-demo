@@ -763,7 +763,7 @@ whitenoise = "^6.7.0"
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
 reference = "main"
-resolved_reference = "15acafc4d411d16609c3b36feb7f87da5ca8d82a"
+resolved_reference = "9296f6b5fe336785c0ec486ed81a6492328d31fc"
 
 [[package]]
 name = "lxml"
