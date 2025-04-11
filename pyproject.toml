@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^5.1.2"
-ksu-events = {git = "https://github.com/alt-cs-lab/ksu-events", branch = "bootstrap-styling"}
+ksu-events = {git = "https://github.com/alt-cs-lab/ksu-events", branch = "the-reg-srikes-back"}
 django-ksu-cas-auth = {git = "https://github.com/alt-cs-lab/django-ksu-cas-auth", tag = "5.0"}
 django-cas-ng = "^5.0.1"
 psycopg2 = "^2.9.10"
