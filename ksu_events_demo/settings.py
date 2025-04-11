@@ -40,11 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ksu_events',
-    'ksu_events.registration',
+
     'django_ksu_cas_auth',
     'ksu_events_demo',
     'django_cas_ng',
+
+    'ksu_events',
+    'ksu_events.events',
+    'ksu_events.registration',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -91,7 +94,7 @@ if useTestCas:
 CAS_LOGOUT_COMPLETELY = False
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
-AUTH_USER_MODEL = 'ksu_events.User'
+AUTH_USER_MODEL = 'events.User'
 
 ROOT_URLCONF = 'ksu_events_demo.urls'
 
