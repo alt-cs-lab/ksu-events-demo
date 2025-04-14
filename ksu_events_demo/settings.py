@@ -69,7 +69,7 @@ MIDDLEWARE = [
 
 # implementation configuration
 CAS_SERVER_URL = 'https://signin.k-state.edu/WebISO/'
-useTestCas = False  # set true to use testcas.cs.ksu.edu
+useTestCas = True  # set true to use testcas.cs.ksu.edu
 
 # cas logic
 
