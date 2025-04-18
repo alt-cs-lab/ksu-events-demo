@@ -522,14 +522,14 @@ test = ["djangorestframework", "graphene-django", "pytest", "pytest-cov", "pytes
 
 [[package]]
 name = "django-crispy-forms"
-version = "2.3"
+version = "2.4"
 description = "Best way to have Django DRY forms"
 optional = false
 python-versions = ">=3.8"
 groups = ["main"]
 files = [
-    {file = "django_crispy_forms-2.3-py3-none-any.whl", hash = "sha256:efc4c31e5202bbec6af70d383a35e12fc80ea769d464fb0e7fe21768bb138a20"},
-    {file = "django_crispy_forms-2.3.tar.gz", hash = "sha256:2db17ae08527201be1273f0df789e5f92819e23dd28fec69cffba7f3762e1a38"},
+    {file = "django_crispy_forms-2.4-py3-none-any.whl", hash = "sha256:5a4b99876cfb1bdd3e47727731b6d4197c51c0da502befbfbec6a93010b02030"},
+    {file = "django_crispy_forms-2.4.tar.gz", hash = "sha256:915e1ffdeb2987d78b33fabfeff8e5203c8776aa910a3a659a2c514ca125f3bd"},
 ]
 
 [package.dependencies]
@@ -762,8 +762,8 @@ whitenoise = "^6.7.0"
 [package.source]
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
-reference = "main"
-resolved_reference = "9296f6b5fe336785c0ec486ed81a6492328d31fc"
+reference = "jake-sprint-11"
+resolved_reference = "88270f801d5f7c2f2f564deb7e9d0db88af68907"
 
 [[package]]
 name = "lxml"
@@ -1505,4 +1505,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "f57e9b2a53b0019638dfcb27fab69bbb8b0363430636ed492255fc22a524150f"
+content-hash = "57ee24895c7f1978c7bb1cc383cec552de66d6badc85e0568eab169368cd9cf6"

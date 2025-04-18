@@ -15,24 +15,21 @@ This is a demo event that reads in the events package.
 - You can change the package version in toml by branch name (i.e branch="main") or by release tag (i.e tag="a.8.0")
 
 ## Runing Dev WebApp
-* migrate the db `poetry run python manage.py migrate` 
+* reset the db `poetry run python manage.py resetdb`
+* seed demo data `poetry run python manage.py loaddata seed`
 * start the server `poetry run python manage.py runserver`
 * optionally specify port `poetry run python manage.py runserver 0.0.0.0:8000`
 * open the provided URL in a web browser `Starting development server at http://0.0.0.0:8000/`
 
 ## Common Commands
-* update dependencies and lock file (pyproject.toml and poetry.lock) to latest version `poetry update`
+* update dependencies and lock file (pyproject.toml and poetry.lock) `poetry update`
+* reset db and recreate migrations `poetry run python manage.py resetdb`
+* seed demo data `poetry run python manage.py loaddata seed`
 * make migrations `poetry run python manage.py makemigrations`
-* manage db `poetry run python manage.py dbshell`
-* creating admin account `poetry run python manage.py createsuperuser`
-
-## Reset DB when migrations fail
-* manage db `poetry run python manage.py dbshell`
-* drop schema `DROP SCHEMA public CASCADE;`
-* recreate schema `CREATE SCHEMA public;`
-* leave psql `\q`
-* optionally create migrations `poetry run python manage.py makemigrations`
 * migrate db `poetry run python manage.py migrate` 
+* manage db with psql `poetry run python manage.py dbshell`
+* leave psql `\q`
+* creating admin account `poetry run python manage.py createsuperuser`
 
 ## login to django admin panel
 * creating admin account `poetry run python manage.py createsuperuser`
