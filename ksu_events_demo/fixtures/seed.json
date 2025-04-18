@@ -1,0 +1,51 @@
+[
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 1,
+        "fields": {
+            "value": "Prefer not to answer"
+        }
+    },
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 2,
+        "fields": {
+            "value": "White"
+        }
+    },
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 3,
+        "fields": {
+            "value": "Hispanic or Latino"
+        }
+    },
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 4,
+        "fields": {
+            "value": "Black or African American"
+        }
+    },
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 5,
+        "fields": {
+            "value": "Asian"
+        }
+    },
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 6,
+        "fields": {
+            "value": "Native Hawaiian or Other Pacific Islander"
+        }
+    },
+    {
+        "model": "registration.ethnicityoption",
+        "pk": 7,
+        "fields": {
+            "value": "American Indian or Alaska Native"
+        }
+    }
+]
