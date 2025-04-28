@@ -762,7 +762,7 @@ whitenoise = "^6.7.0"
 [package.source]
 type = "git"
 url = "https://github.com/alt-cs-lab/ksu-events"
-reference = "main"
+reference = "a.11.0"
 resolved_reference = "8092cbbde40d2da994bc7ac8e9d3de988a31955b"
 
 [[package]]
@@ -1496,4 +1496,4 @@ files = [
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.10"
-content-hash = "f57e9b2a53b0019638dfcb27fab69bbb8b0363430636ed492255fc22a524150f"
+content-hash = "67692105674fe3ef0906f2398af35b91bfe8af8d2035c9414c13200a89e81137"
